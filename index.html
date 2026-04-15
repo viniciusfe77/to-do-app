@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Lista de Tarefas</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
 
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* O Item da Tarefa */
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            background: #fff;
+            border-left: 8px solid #ddd; /* Borda lateral padrão */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        /* --- Cores por Prioridade (Lógica que você pediu) --- */
+        
+        .alta { 
+            border-left-color: #ff4d4d; /* Vermelho */
+            background-color: #fff5f5; 
+        }
+        
+        .media { 
+            border-left-color: #ffcc00; /* Amarelo */
+            background-color: #fffdf2; 
+        }
+        
+        .baixa { 
+            border-left-color: #4da6ff; /* Azul/Verde */
+            background-color: #f2f8ff; 
+        }
+
+        /* --- Efeito de Tarefa Pronta --- */
+        
+        /* O segredo: quando o checkbox for marcado (:checked) 
+           o elemento <span> que vem logo depois dele muda de estilo */
+        input[type="checkbox"]:checked + span {
+            text-decoration: line-through;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .task-text {
+            margin-left: 12px;
+            font-size: 16px;
+            color: #444;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Minhas Tarefas</h2>
+    
+    <ul class="task-list">
+        <li class="task-item alta">
+            <input type="checkbox">
+            <span class="task-text">Entregar relatório urgente</span>
+        </li>
+
+        <li class="task-item media">
+            <input type="checkbox">
+            <span class="task-text">Estudar node.js e bases de dados</span>
+        </li>
+
+        <li class="task-item baixa">
+            <input type="checkbox">
+            <span class="task-text">Comprar café</span>
+        </li>
+
+        <li class="task-item baixa">
+            <input type="checkbox" checked>
+            <span class="task-text">Academia feita</span>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
